@@ -1,7 +1,5 @@
 package com.whl.leekcode.sort;
 
-import java.util.Arrays;
-
 /**
  * 冒泡排序
  * @author liaowenhui
