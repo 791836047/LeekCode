@@ -3,7 +3,7 @@ package com.whl.leekcode.sort;
 import java.util.Arrays;
 
 /**
- * 实现堆排序：1）根据无序数组创建一个大根堆；2）不断调整大根堆，使其到达有序。
+ * 实现堆排序：1）根据无序数组创建一个大根堆；2）通过循环，自上而下，自左向右进行调整大根堆使其到达有序。
  *  http://www.360doc.com/content/20/1106/11/5315_944403906.shtml
  *  https://www.jianshu.com/p/938789fde325
  *  https://www.cnblogs.com/chengxiao/p/6129630.html
@@ -21,21 +21,20 @@ public class HeadSort {
 
     public static void heapSort(int[] arr) {
         int n = arr.length;
-        //TODO 待证明最后一个非叶子结点的数组下标为array.length/2 - 1
-        //建大根堆，这里元素的索引是从0开始的,所以最后一个非叶子结点的数组下标为array.length/2 - 1
+        //创建大根堆(根节点元素是最大)，这里元素的索引是从0开始的,所以最后一个非叶子结点的数组下标为array.length/2 - 1
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(arr, n, i);
         }
 
-        //上面循环结束后，形成大根堆(根节点元素是最大)
+        //调整大根堆,目的只有一个：将较大元素调整至末尾处！
         for (int j = n - 1; j > 0; j--) {
-            //交换堆的根结点(最大元素)与当前最后一个元素(i)
+            //首位交换，交换堆的根结点(最大元素)与当前最后一个元素(i)
             int temp = arr[0];
             arr[0] = arr[j];
             arr[j] = temp;
 
-            // 元素交换之后，毫无疑问，最后一个元素无需再考虑排序问题了。在去掉最后一个元素的堆上进行堆化操作,这也是为什么此方法放在循环里的原因
-            // 自上而下，自左向右进行调整的
+            //堆化操作，自上而下，自左向右进行调整的
+            //元素交换之后，毫无疑问，最后一个元素无需再考虑排序问题了。在去掉最后一个元素的堆上进行堆化操作,这也是为什么此方法放在循环里的原因
             heapify(arr, j, 0);
         }
     }
@@ -49,9 +48,9 @@ public class HeadSort {
     static void heapify(int[] arr, int n, int i) {
         // 初始化最大元素的数组下标
         int largest = i;
-        // 数组下标为i的左孩子结点的下标为 leftIndex = 2*i + 1
+        // 数组下标为i的左孩子结点的下标为l = 2*i + 1
         int l = 2 * i + 1;
-        // 数组下标为i 的右孩子结点的下表为 rightIndex = 2*i + 2
+        // 数组下标为i 的右孩子结点的下表为r = 2*i + 2
         int r = 2 * i + 2;
 
         // 如果左孩子结点比父结点大，更新largest为左孩子下标
