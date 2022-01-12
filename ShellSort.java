@@ -25,13 +25,12 @@ public class ShellSort {
                 while (j >= 0 && arr[j] > temp) {
                     arr[j + step] = arr[j];
                     j -= step;
+                    System.out.println("i为" + i + "的while结果为：" + Arrays.toString(arr));
                 }
                 arr[j + step] = temp;
-                System.out.print("第" + i + "步排序结果为：" + Arrays.toString(arr));
-                System.out.print("\n");
+                System.out.println("i为" + i + "的for结果为：" + Arrays.toString(arr));
             }
-            System.out.print("step为" + step + "的排序结果为：" + Arrays.toString(arr));
-            System.out.print("\n");
+            System.out.println("step为" + step + "的排序结果为：" + Arrays.toString(arr));
         }
     }
 }
