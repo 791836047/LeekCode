@@ -1,4 +1,6 @@
-package com.whl.leekcode.other;
+package com.whl.leekcode.other.Multithread;
+
+import com.whl.leekcode.other.MyTask;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;

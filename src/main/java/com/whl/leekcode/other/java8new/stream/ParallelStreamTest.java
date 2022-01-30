@@ -1,4 +1,4 @@
-package com.whl.leekcode.other.stream;
+package com.whl.leekcode.other.java8new.stream;
 
 import java.util.Arrays;
 

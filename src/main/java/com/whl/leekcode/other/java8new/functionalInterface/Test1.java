@@ -1,4 +1,4 @@
-package com.whl.leekcode.other.functionalInterface;
+package com.whl.leekcode.other.java8new.functionalInterface;
 
 import com.whl.leekcode.other.MyTask;
 

@@ -1,6 +1,5 @@
-package com.whl.leekcode.other.stream;
+package com.whl.leekcode.other.java8new.stream;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

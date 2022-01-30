@@ -1,4 +1,4 @@
-package com.whl.leekcode.other.anonymous;
+package com.whl.leekcode.other.java8new.anonymous;
 
 /**
  * 菜鸟--https://www.runoob.com/java/java-anonymous-class.html

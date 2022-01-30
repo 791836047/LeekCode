@@ -1,4 +1,4 @@
-package com.whl.leekcode.other.anonymous;
+package com.whl.leekcode.other.java8new.anonymous;
 
 /**
  * 匿名类实现一个接口
