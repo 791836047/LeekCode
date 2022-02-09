@@ -5,6 +5,8 @@ package com.whl.leekcode.easy;/*
  *             YUNXI PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
+import com.whl.leekcode.common.ListNode;
+
 /**
  * leekcode206单链表反转
  * [head->1->2->3->4->null] -> [head->4->3->2->1->null]

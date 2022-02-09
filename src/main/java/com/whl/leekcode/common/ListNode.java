@@ -1,4 +1,4 @@
-package com.whl.leekcode.easy;/*
+package com.whl.leekcode.common;/*
  *  @(#)ListNode.java 1.0 2021-06-20
  *
  *             Copyright (c) 2017, YUNXI. All rights reserved.
@@ -11,10 +11,10 @@ package com.whl.leekcode.easy;/*
  * @date 2021/6/20 16:29
  */
 public class ListNode {
-    int date;
-    ListNode next;
+    public int date;
+    public ListNode next;
 
-    ListNode(int date) {
+    public ListNode(int date) {
         this.date = date;
     }
 
