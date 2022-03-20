@@ -3,7 +3,8 @@ package com.whl.leekcode.other.Multithread;
 import java.util.concurrent.*;
 
 /**
- * @author liaowenhui
+ * Future示例
+ * @author JustJavait
  * @date 2022/1/12 17:55
  */
 public class CallableFuture {
@@ -12,7 +13,6 @@ public class CallableFuture {
         Task task = new Task();
         Future<Integer> result = executor.submit(task);
         executor.shutdown();
-
 
         try {
             Thread.sleep(1000);

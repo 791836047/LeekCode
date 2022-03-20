@@ -3,23 +3,24 @@ package com.whl.leekcode.other.Multithread;
 import java.util.concurrent.*;
 
 /**
- * @author liaowenhui
+ * FutureTask示例
+ * @author JustJavait
  * @date 2022/1/12 18:02
  */
 public class CallableFutureTask {
     public static void main(String[] args) {
-        //第一种方式
-        /*ExecutorService executor = Executors.newCachedThreadPool();
+        //第一种方式 线程池
+        ExecutorService executor = Executors.newCachedThreadPool();
         Task1 task1 = new Task1();
-        FutureTask<Integer> futureTask = new FutureTask<Integer>(task1);
+        FutureTask<Integer> futureTask = new FutureTask<>(task1);
         executor.submit(futureTask);
-        executor.shutdown();*/
+        executor.shutdown();
 
         //第二种方式，注意这种方式和第一种方式效果是类似的，只不过一个使用的是ExecutorService，一个使用的是Thread
-        Task1 task1 = new Task1();
-        FutureTask<Integer> futureTask = new FutureTask<Integer>(task1);
+       /* Task1 task1 = new Task1();
+        FutureTask<Integer> futureTask = new FutureTask<>(task1);
         Thread thread = new Thread(futureTask);
-        thread.start();
+        thread.start();*/
 
         try {
             Thread.sleep(1000);
