@@ -13,7 +13,8 @@ public class SyncTest4 implements Runnable {
         public void run() {
             //其他操作.......
             /**
-             * this表示当前对象实例，这里还可以使用syncTest4.class，表示class对象锁
+             * this表示当前对象实例(调用方法的对象实例)，等价于synchronized修饰非静态方法
+             * 这里还可以使用syncTest4.class，表示class对象锁，等价于synchronized修饰静态方法
              */
             synchronized (this){
                 for (int j = 0; j < 10000; j++) {
@@ -22,9 +23,9 @@ public class SyncTest4 implements Runnable {
             }
         }
         public static void main(String[] args) throws Exception {
-            com.whl.leekcode.other.synchronizedtest.SyncTest4 syncTest = new com.whl.leekcode.other.synchronizedtest.SyncTest4();
-            Thread t1 = new Thread(syncTest);
-            Thread t2 = new Thread(syncTest);
+            //SyncTest4 syncTest = new SyncTest4();
+            Thread t1 = new Thread(new SyncTest4());
+            Thread t2 = new Thread(new SyncTest4());
             t1.start();
             t2.start();
             t1.join();

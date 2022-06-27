@@ -12,7 +12,7 @@ public class SyncTest implements Runnable{
     private static int i = 0;
 
     /**
-     * 修饰非静态(实例)方法时,是取代码所在的对象实例作为线程要持有的锁。
+     * 修饰非静态(实例)方法时,是取调用该方法的对象实例作为线程要持有的锁。
      */
     private synchronized void add() {
         i++;
