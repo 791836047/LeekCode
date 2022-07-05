@@ -18,7 +18,6 @@ public class test {
         //System.out.println(deque.poll());
         System.out.println(deque.pop());
 
-
         Deque<Integer> deque2  = new LinkedList<>();
         deque2.offer(1);
         deque2.offer(2);

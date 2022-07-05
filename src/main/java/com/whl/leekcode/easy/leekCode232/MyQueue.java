@@ -5,7 +5,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 /**
- * 面
+ * 面bigo1
  * 用栈实现队列
  * 方法一 用Deque实现
  * @author liaowenhui

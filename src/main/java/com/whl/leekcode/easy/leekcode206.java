@@ -8,7 +8,7 @@ package com.whl.leekcode.easy;/*
 import com.whl.leekcode.common.ListNode;
 
 /**
- * leekcode206单链表反转
+ * leekcode206单链表反转   同剑指 Offer 06跟offer24
  * [head->1->2->3->4->null] -> [head->4->3->2->1->null]
  *
  * @author liaowenhui
