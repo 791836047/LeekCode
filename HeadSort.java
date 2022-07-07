@@ -3,6 +3,7 @@ package com.whl.leekcode.sort;
 import java.util.Arrays;
 
 /**
+ * bigo
  * 实现堆排序：1）根据无序数组创建一个大根堆；2）通过循环，自上而下，自左向右进行调整大根堆使其到达有序。
  *  http://www.360doc.com/content/20/1106/11/5315_944403906.shtml
  *  https://www.jianshu.com/p/938789fde325
