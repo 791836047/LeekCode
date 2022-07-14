@@ -3,8 +3,11 @@ package com.whl.leekcode.sort;
 import java.util.Arrays;
 
 /**
- * bigo
- * 实现堆排序：1）根据无序数组创建一个大根堆；2）通过循环，自上而下，自左向右进行调整大根堆使其到达有序。
+ * bigo，腾讯
+ * 堆是一棵完全二叉树，所谓完全二叉树的特点：叶子结点只能出现在最下层和次下层，且最下层的叶子结点集中在树的左部。
+ * 实现堆排序：
+ * 1）根据无序数组创建一个大根堆；
+ * 2）通过循环，自上而下，自左向右进行调整大根堆使其到达有序。
  *  http://www.360doc.com/content/20/1106/11/5315_944403906.shtml
  *  https://www.jianshu.com/p/938789fde325
  *  https://www.cnblogs.com/chengxiao/p/6129630.html
@@ -22,6 +25,10 @@ public class HeadSort {
 
     public static void heapSort(int[] arr) {
         int n = arr.length;
+        /**
+         * 若一根完全二叉树有n个节点，则n-1为最后一个叶子节点的下标，而完全二叉树中数组下标为i的左孩子结点的下标为l = 2*i + 1,
+         * 即n-1 = 2*i +1，得i = (n-2)/2,于是二叉树的最后一个非终端节点的下标就为(n-2)/2
+         */
         //创建大根堆(根节点元素是最大)，这里元素的索引是从0开始的,所以最后一个非叶子结点的数组下标为array.length/2 - 1
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(arr, n, i);
