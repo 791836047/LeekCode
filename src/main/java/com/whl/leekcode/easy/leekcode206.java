@@ -16,7 +16,31 @@ import com.whl.leekcode.common.ListNode;
  */
 public class leekcode206 {
 
+    public static void main(String[] args) {
+        //初始化
+        ListNode head = new ListNode(1);
+        ListNode node1 = new ListNode(2);
+        ListNode node2 = new ListNode(3);
+        ListNode node3 = new ListNode(4);
+        head.setNext(node1);
+        node1.setNext(node2);
+        node2.setNext(node3);
+
+        //方法1 迭代
+        //ListNode listNode = reverseList2(head);
+        //方法2 递归反转
+        ListNode listNode = reverseList(head);
+
+        //打印
+        while (null != listNode) {
+            System.out.print(listNode.getDate() + " ");
+            listNode = listNode.getNext();
+        }
+    }
+
+
     /**
+     * 7.12 手写1/3
      * 方法2 递归反转
      * 第一要素，明确递归函数功能:递归反转子链表
      * 第二要素，寻找递归结束条件
@@ -43,12 +67,14 @@ public class leekcode206 {
         node.next = head;
         // 1的next指向null.
         head.next = null;
-        // 返回把调整之后的链表
+
+        // 返回调整之后的链表
         return newHead;
     }
 
 
     /**
+     *  7.12手写成功
      *  方法1 迭代
      *  1->2->3->null
      * 第一步 1->null  2->3->null
@@ -83,28 +109,6 @@ public class leekcode206 {
             curr = next;
         }
         return prev;
-    }
-
-    public static void main(String[] args) {
-        //初始化
-        ListNode head = new ListNode(1);
-        ListNode node1 = new ListNode(2);
-        ListNode node2 = new ListNode(3);
-        ListNode node3 = new ListNode(4);
-        head.setNext(node1);
-        node1.setNext(node2);
-        node2.setNext(node3);
-
-        //方法1 迭代
-        //ListNode listNode = reverseList2(head);
-        //方法2 递归反转
-        ListNode listNode = reverseList(head);
-
-        //打印
-        while (null != listNode) {
-            System.out.print(listNode.getDate() + " ");
-            listNode = listNode.getNext();
-        }
     }
 
 }

@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Map;
 
 /**
- *  有效的括号
+ *  有效的括号      7.14写成功(!! 为写的时候有问题)
  *  给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
  * 有效字符串需满足：
  * 左括号必须用相同类型的右括号闭合。
@@ -22,7 +22,7 @@ public class LeekCode20 {
         //true
         String s1 = "()[]{}";
         System.out.println(isValid(s1));
-        String s4 = "([])";
+        String s4 = "([]]";
         System.out.println(isValid(s4));
 
         System.out.println("-----------------------------------------------");
@@ -70,18 +70,19 @@ public class LeekCode20 {
             put(']', '[');
             put('}', '{');
         }};
-        //java把栈封装在了linkedlist中的deque接口里面
+
+        //java把栈封装在了linkedlist中的deque接口里面 ！！
         Deque<Character> stack = new LinkedList<>();
         for (int i = 0; i < n; i++) {
             char ch = s.charAt(i);
             //如果是右括号，如果栈为空(说明没有对应的左括号)或者如果栈顶的左括号和对应的左括号不同的话，不符
             if (pairs.containsKey(ch)) {
-                //peek():查看该堆栈顶部的对象，而不将其从堆栈中删除
+                //peek():查看该堆栈顶部的对象，而不将其从堆栈中删除  ！！
                 if (stack.isEmpty() || !stack.peek().equals(pairs.get(ch))) {
                     return false;
                 }
                 //栈顶的左括号和对应的左括号相同，出栈
-                //pop():移除该堆栈顶部的对象，并将该对象作为该函数的值返回
+                //pop():移除该堆栈顶部的对象，并将该对象作为该函数的值返回 ！！
                 stack.pop();
                 //如果是左括号，入栈
             } else {
@@ -89,7 +90,7 @@ public class LeekCode20 {
                 stack.push(ch);
             }
         }
-        //在遍历结束后，如果栈中没有左括号，说明我们将字符串 ss 中的所有左括号闭合
+        //  在遍历结束后，如果栈中没有左括号，说明我们将字符串 ss 中的所有左括号闭合  ！！
         return stack.isEmpty();
     }
 }
