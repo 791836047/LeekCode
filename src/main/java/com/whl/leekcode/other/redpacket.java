@@ -11,7 +11,7 @@ import java.util.Random;
  *  假设当前还有n个人未领取，红包剩余金额为m元
  * 剩余的n个人按顺序领取，每个人可领取[1 ～（m - (n - 1))]区间的随机金额。
  * (m - (n - 1))用来确保剩余的n-1人最少可以领取到1元红包。
- * @author liaowenhui
+ * @author JustJavaIt
  * @date 2022/9/23 14:46
  */
 public class redpacket {
