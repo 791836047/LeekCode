@@ -4,6 +4,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 /**
+ * 220808、20220909写
  * 剑指 Offer 09. 用两个栈实现队列
  * @author liaowenhui
  * @date 2022/2/8 14:43
@@ -43,6 +44,7 @@ public class Offer09 {
                 stack2.push(stack1.pop());
             }
         }
+        //!! 没有考虑到返回 -1
         if (stack2.isEmpty()) {
             return -1;
         } else {

@@ -1,18 +1,29 @@
-package com.whl.leekcode.easy.leekCode255;
-
-import com.whl.leekcode.easy.leekCode232.MyQueue2;
+package com.whl.leekcode.easy.leekCode225;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 
 /**
+ * 220808、220909写
  * 两个队列实现栈
  * 面
  * @author liaowenhui
  * @date 2022/6/27 14:34
  */
 public class MyStack {
+
+    public static void main(String[] args) {
+        MyStack myStack = new MyStack();
+        myStack.push(1);
+        myStack.push(2);
+        // 返回 2
+        System.out.println(myStack.top());
+        // 返回 2
+        System.out.println(myStack.pop());
+        // 返回 False
+        System.out.println(myStack.empty());
+    }
+
     Deque<Integer> queue1;
     Deque<Integer> queue2;
 
@@ -33,6 +44,7 @@ public class MyStack {
             queue2.offer(queue1.poll());
         }
 
+        //!!
         Deque<Integer> temp = queue1;
         queue1 = queue2;
         queue2 = temp;
@@ -59,18 +71,6 @@ public class MyStack {
      */
     public boolean empty() {
         return queue1.isEmpty();
-    }
-
-    public static void main(String[] args) {
-        MyStack myStack = new MyStack();
-        myStack.push(1);
-        myStack.push(2);
-        // 返回 2
-        System.out.println(myStack.top());
-        // 返回 2
-        System.out.println(myStack.pop());
-        // 返回 False
-        System.out.println(myStack.empty());
     }
 
 }

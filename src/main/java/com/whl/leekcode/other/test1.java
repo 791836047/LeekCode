@@ -11,7 +11,7 @@ import java.util.Date;
  * @author liaowenhui
  * @date 2022/5/19 14:39
  */
-public class test {
+public class test1 {
     public static void main(String[] args) {
      /*int a = 83318096;
         boolean odd = isOdd(83318097);

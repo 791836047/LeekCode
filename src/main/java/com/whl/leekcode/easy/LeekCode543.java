@@ -1,6 +1,7 @@
 package com.whl.leekcode.easy;
 
 import com.whl.leekcode.common.ListNode;
+import com.whl.leekcode.common.TreeNode;
 
 /**
  * 拼多多1
@@ -45,25 +46,6 @@ public class LeekCode543 {
         ans = Math.max(ans, L + R + 1);
         // 返回该节点为根的子树的深度
         return Math.max(L, R) + 1;
-    }
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
     }
 
 
