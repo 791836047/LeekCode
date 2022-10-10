@@ -3,7 +3,7 @@ package com.whl.leekcode.sort;
 import java.util.Arrays;
 
 /**
- * bigo
+ * bigo   714(写成功)
  * 问题：什么是稳定排序和不稳定排序,时间复杂度问题
  * 快速排序  平均时间复杂度为O(n*logn)  不是稳定排序
  * 菜鸟教程-----https://www.runoob.com/w3cnote/quick-sort.html
@@ -37,15 +37,18 @@ public class QuicklySort {
      * 循环两个区后继续分区  {48,6,57,6,60,42} {72,83,73,88,85}
      */
     static void quickSort(int[] s, int l, int r) {
+        //这个if都不满足就没必要排序了
         if (l < r) {
             // x为基准值，s[l]即s[i]就是第一个坑
             int i = l, j = r, x = s[l];
             while (i < j) {
                 // 当前区间从右向左(从后往前)找第一个小于x的数，来填s[i]
+                // !! >==
                 while (i < j && s[j] >= x) {
                     j--;
                 }
                 if (i < j) {
+                    //!! 写错
                     // 将s[j]填到s[i]中，s[j]就形成了一个新的坑
                     // 等价于分两步s[i] = s[j];i++;
                     s[i++] = s[j];
@@ -61,8 +64,11 @@ public class QuicklySort {
                     s[j--] = s[i];
                 }
             }
+            //!! 忘写
             s[i] = x;
             // 递归调用
+            //!! i-1
+            //这个i就是第一次分区后的i值，接下来对它的左右两边再进行排序
             quickSort(s, l, i - 1);
             quickSort(s, i + 1, r);
         }
