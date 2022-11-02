@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 二叉树的后序遍历
+ * 先、中、后就表示根节点的遍历处于哪个位置
+ * 二叉树的后序遍历：先遍历左节点,再遍历右节点,最后遍历根节点
  *
  * @author liaowenhui
  * @date 2022/7/21 10:00

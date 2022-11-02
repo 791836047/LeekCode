@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 二叉树的前序遍历
+ * 二叉树的前序遍历：先遍历根节点,再遍历左节点,最后遍历右节点;
  * @author liaowenhui
  * @date 2022/7/21 9:54
  */
