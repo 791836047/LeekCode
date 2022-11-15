@@ -23,28 +23,29 @@ public class TestMyStack {
     }
 
     Deque<Integer> queue1;
-    Deque<Integer> deque2;
+    Deque<Integer> queue2;
 
     /**
      * Initialize your data structure here.
      */
     public TestMyStack() {
         queue1  = new LinkedList<>();
-        deque2  = new LinkedList<>();
+        queue2  = new LinkedList<>();
     }
 
     /**
      * Push element x onto stack.
+     * 将元素 x 压入栈顶
      */
     public void push(int x) {
-        deque2.offer(x);
-        if (!queue1.isEmpty()){
-            deque2.offer(queue1.poll());
+        queue2.offer(x);
+        while (!queue1.isEmpty()) {
+            queue2.offer(queue1.poll());
         }
-        Deque<Integer> temp;
-        temp = queue1;
-        queue1 = deque2;
-        deque2 = temp;
+        Deque<Integer> temp = new LinkedList<>();
+        temp = queue2;
+        queue2 = queue1;
+        queue1 =temp;
 
     }
 
@@ -66,9 +67,14 @@ public class TestMyStack {
 
     /**
      * Returns whether the stack is empty.
+     * 如果栈是空的，返回 true ；否则，返回 false
      */
     public boolean empty() {
-        return queue1.isEmpty();
+        if (queue1.isEmpty()){
+            return true;
+        }
+        return false;
+
     }
 
 }

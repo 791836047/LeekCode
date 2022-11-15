@@ -20,6 +20,7 @@ public class MyStack {
         System.out.println(myStack.top());
         // 返回 2
         System.out.println(myStack.pop());
+        System.out.println(myStack.top());
         // 返回 False
         System.out.println(myStack.empty());
     }
@@ -44,7 +45,6 @@ public class MyStack {
             queue2.offer(queue1.poll());
         }
 
-        //!!
         Deque<Integer> temp = queue1;
         queue1 = queue2;
         queue2 = temp;

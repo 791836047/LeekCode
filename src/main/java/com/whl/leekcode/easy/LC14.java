@@ -4,6 +4,7 @@ package com.whl.leekcode.easy;/**
  */
 
 /**
+ * 荣耀校招
  * 最长公共前缀
  * https://leetcode.cn/problems/longest-common-prefix/solutions/288575/zui-chang-gong-gong-qian-zhui-by-leetcode-solution/
  * @author liaowenhui
