@@ -12,6 +12,8 @@ public class LeekCode43 {
     }
 
     /**
+     * 时间复杂度：O(mn+n^2)
+     * 空间复杂度：O(m+n)
      * 被乘数在前面,乘数在后面
      * @param num1 被乘数
      * @param num2 乘数
@@ -26,7 +28,7 @@ public class LeekCode43 {
         for (int i = n - 1; i >= 0; i--) {
             StringBuilder curr = new StringBuilder();
             int add = 0;
-            //除了最低位以外，其余的每一位的运算结果都需要补 00。
+            //除了最低位以外，其余的每一位的运算结果都需要补0。
             for (int j = n - 1; j > i; j--) {
                 curr.append(0);
             }
