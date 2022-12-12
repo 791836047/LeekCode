@@ -4,7 +4,7 @@ import com.whl.leekcode.common.ListNode;
 
 
 /**
- *  链表中倒数第k个节点
+ *  链表中倒数第k个节点(字节)
  * @author liaowenhui
  * @date 2022/12/9 9:54
  */

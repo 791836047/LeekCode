@@ -17,39 +17,32 @@ public class JoinCountDownLatch2 {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService =
                 Executors.newFixedThreadPool(2);
-        executorService.execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-                    countDownLatch.countDown();
-                }
-
+        executorService.execute(() -> {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
                 System.out.println("子线程1执行完毕");
-
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("当子线程调用countdown之后，主线程await方法就会方法（只要计数器为0）");
+                countDownLatch.countDown();
             }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("当子线程调用countdown之后，主线程await方法就会方法（只要计数器为0）");
         });
 
-        executorService.execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-                    countDownLatch.countDown();
-                }
+        executorService.execute(() -> {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
                 System.out.println("子线程2执行完毕");
+                countDownLatch.countDown();
             }
         });
 

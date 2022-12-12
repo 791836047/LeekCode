@@ -13,27 +13,23 @@ public class JoinCountDownLatch {
     private static CountDownLatch countDownLatch = new CountDownLatch(2);
 
     public static void main(String[] args) throws InterruptedException {
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }finally {
-                    countDownLatch.countDown();
-                }
-
+        Thread t1 = new Thread(() -> {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }finally {
                 System.out.println("子线程1执行完毕");
-
-                // 注意下边代码
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("不需要子线程执行完毕，只需要调用countdown后，主线程就可以继续执行");
+                countDownLatch.countDown();
             }
+
+            // 注意下边代码
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("不需要子线程执行完毕，只需要调用countdown后，主线程就可以继续执行");
         });
 
         Thread t2 = new Thread(new Runnable() {
@@ -44,9 +40,9 @@ public class JoinCountDownLatch {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }finally {
+                    System.out.println("子线程2执行完毕");
                     countDownLatch.countDown();
                 }
-                System.out.println("子线程2执行完毕");
             }
         });
 
