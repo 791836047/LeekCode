@@ -10,24 +10,21 @@ public class ThreadLocalTest {
         //打印当前线程本地内存中localVariable变量的值
         System.out.println(str + ":" + localVariable.get());
         //清除当前线程本地内存中的localVariable的值
-        localVariable.remove();
+        //localVariable.remove();
     }
 
     //创建ThreadLocal变量
-    static ThreadLocal<String> localVariable = new ThreadLocal<String>();
+    static ThreadLocal<String> localVariable = new ThreadLocal<>();
 
     //创建线程one
     public static void main(String[] args) {
-        Thread threadOne = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                //设置线程One中本地变量loalVariable的值
-                localVariable.set("threadOne local variable");
-                //调用打印函数
-                print("threadOne");
-                //打印本地变量值
-                System.out.println("threadOne remove after" + ":" + localVariable.get());
-            }
+        Thread threadOne = new Thread(() -> {
+            //设置线程One中本地变量loalVariable的值
+            localVariable.set("threadOne local variable");
+            //调用打印函数
+            print("threadOne");
+            //打印本地变量值
+            System.out.println("threadOne remove after" + ":" + localVariable.get());
         });
         //创建线程two
         Thread threadTwo = new Thread(new Runnable() {

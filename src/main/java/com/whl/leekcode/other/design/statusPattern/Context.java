@@ -1,10 +1,7 @@
-package com.whl.leekcode.other.design.statusPattern;/**
- * @author liaowenhui
- * @date 2022/10/14 14:39
- */
+package com.whl.leekcode.other.design.statusPattern;
 
 /**
- *
+ * Context 是一个带有某个状态的类。
  * @author liaowenhui
  * @date 2022/10/14 14:39
  */

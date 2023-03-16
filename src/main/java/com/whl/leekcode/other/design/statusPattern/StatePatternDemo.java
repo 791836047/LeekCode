@@ -1,7 +1,4 @@
-package com.whl.leekcode.other.design.statusPattern;/**
- * @author liaowenhui
- * @date 2022/10/14 14:40
- */
+package com.whl.leekcode.other.design.statusPattern;
 
 /**
  *
@@ -14,12 +11,10 @@ public class StatePatternDemo {
 
         StartState startState = new StartState();
         startState.doAction(context);
-
         System.out.println(context.getState().toString());
 
         StopState stopState = new StopState();
         stopState.doAction(context);
-
         System.out.println(context.getState().toString());
     }
 }

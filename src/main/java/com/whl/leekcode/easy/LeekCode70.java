@@ -16,8 +16,10 @@ public class LeekCode70 {
     }
 
     /**
+     * 1 2 3 5 8
      * 方法一 滚动数组思想
-     * 用「滚动数组思想」把空间复杂度优化成 O(1)O(1)
+     * 用「滚动数组思想」把空间复杂度优化成 O(1)
+     * 时间复杂度：循环执行 n 次，每次花费常数的时间代价，故渐进时间复杂度为 O(n)。
      * @param n
      * @return
      */
@@ -60,5 +62,21 @@ public class LeekCode70 {
         // 把最终结果返回
         return dp[n];
     }
+
+
+   /* static int fTest(int n){
+        if (n<3){
+            return n;
+        }
+
+        f(1) = 1;
+        f(2) = 2;
+        if (int i = 3,i <n ,i++){
+            f(i) = f(i-1) + f(i+1);
+        }
+
+
+    }*/
+
 
 }

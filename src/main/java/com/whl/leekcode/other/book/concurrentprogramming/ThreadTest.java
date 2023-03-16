@@ -17,6 +17,7 @@ public class ThreadTest {
 
     /**
      * 继承Thread类，并重写run方法
+     * 不好的地方是java不支持多继承，如果继承了Thread类，就不能再继承其他类，另外任务和代码没有分离，当多个线程执行一样的任务的时需要多份代码。
      */
     public static class MyThread extends Thread{
         @Override

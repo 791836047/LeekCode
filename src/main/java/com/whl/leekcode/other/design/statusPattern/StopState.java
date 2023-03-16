@@ -1,8 +1,4 @@
-package com.whl.leekcode.other.design.statusPattern;/**
- * @author liaowenhui
- * @date 2022/10/14 14:39
- */
-
+package com.whl.leekcode.other.design.statusPattern;
 /**
  *
  * @author liaowenhui
