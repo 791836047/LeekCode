@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 与LC234同题
  * 剑指 Offer II 027. 回文链表
  * @author liaowenhui
  * @date 2022/2/8 9:59
@@ -32,6 +33,7 @@ public class Offer027 {
     }
 
     /**
+     * 首选方法
      * 将值复制到数组中后用双指针法
      * 时间复杂度和空间复杂度都为O(n)
      * 复杂度分析
@@ -85,7 +87,7 @@ public class Offer027 {
     }
 
     /**
-     * 方法2 递归 不建议比第一种方法性能更差
+     * 方法2 递归 不建议  比第一种方法性能更差
      * 时间复杂度：O(n)，其中 n指的是链表的大小。
      * 空间复杂度：O(n)
      * @param

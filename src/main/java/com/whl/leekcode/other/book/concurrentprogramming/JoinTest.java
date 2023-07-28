@@ -38,7 +38,8 @@ public class JoinTest {
 
         System.out.println("wait all child thread over!");
 
-        //等待子线程执行完毕,返回
+        //主线程让出执行权，等待子线程执行完毕,返回
+        //注释再运行看看
         threadTwo.join();
         threadOne.join();
 

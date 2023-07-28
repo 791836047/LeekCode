@@ -5,7 +5,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 滑动窗口示例二
+ * 滑动窗口示例二  首选
+ *
  * @author liaowenhui
  * @date 2023/3/14 17:58
  */
@@ -43,6 +44,7 @@ public class SlidingWindow {
         // 获取当前时间戳
         long now = System.currentTimeMillis();
         // 计算当前时间所在的时间单元索引
+        //TODO 不理解
         int index = (int) ((now / unitLength) % unitCount);
         // 获取当前时间单元的请求数
         AtomicInteger currentUnit = units[index];
@@ -68,7 +70,8 @@ public class SlidingWindow {
                 if (now - prevUnitStartTime > windowSize * 1000) {
                     total.addAndGet(-prevUnit.get());
                     prevUnit.set(0);
-                } else { // 如果前一个时间单元没有过期，就跳出循环（因为后面的也不会过期）
+                } else {
+                    // 如果前一个时间单元没有过期，就跳出循环（因为后面的也不会过期）
                     break;
                 }
             }
@@ -78,14 +81,15 @@ public class SlidingWindow {
                 total.incrementAndGet();
                 return true;
             } else {
-                return false; // 否则返回false，表示拒绝请求通过
+                // 否则返回false，表示拒绝请求通过
+                return false;
             }
         }
     }
 
     public static void main(String[] args) {
-        // 创建一个滑动窗口对象，设置窗口大小为10秒，时间单元个数为10，限制值为20
-        SlidingWindow slidingWindow = new SlidingWindow(10, 10, 20);
+        // 创建一个滑动窗口对象，设置窗口大小为10秒，时间单元个数为10，限制值为15
+        SlidingWindow slidingWindow = new SlidingWindow(10, 10, 15);
         // 创建一个线程池，用于模拟并发请求
         ExecutorService executorService = Executors.newFixedThreadPool(100);
         // 创建一个计数器数组，用于统计每个时间单元内的请求数

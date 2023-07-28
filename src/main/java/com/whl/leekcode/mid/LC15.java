@@ -3,9 +3,7 @@ package com.whl.leekcode.mid;/**
  * @date 2022/9/23 10:57
  */
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  *  三数之和  字节1
@@ -20,42 +18,46 @@ public class LC15 {
         System.out.println(lists.toString());
     }
 
+    /**
+     * 热门解法  https://leetcode.cn/problems/3sum/solutions/12307/hua-jie-suan-fa-15-san-shu-zhi-he-by-guanpengchn/
+     * 双指针
+     * @param nums
+     * @return
+     */
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList();
         int len = nums.length;
-        if (nums == null || len < 3) {
+        if(len < 3) {
             return ans;
         }
-        //从小到大排序
+        // 排序
         Arrays.sort(nums);
-        System.out.println("排序后:" + Arrays.toString(nums));
-
-        for (int i = 0; i < len; i++) {
-            if (nums[i] > 0) {
-                // 排序后如果当前数字大于0，则三数之和一定大于0，所以结束循环
+        for (int i = 0; i < len ; i++) {
+            if(nums[i] > 0) {
+                // 如果当前数字大于0，则三数之和一定大于0，所以结束循环
                 break;
             }
-            if (i > 0 && nums[i] == nums[i - 1]) {
-                // 去重
-                continue;
+            if(i > 0 && nums[i] == nums[i-1]) {
+                continue; // 去重
             }
-            int L = i + 1;
-            int R = len - 1;
-            while (L < R) {
+            int L = i+1;
+            int R = len-1;
+            while(L < R){
                 int sum = nums[i] + nums[L] + nums[R];
-                if (sum == 0) {
-                    ans.add(Arrays.asList(nums[i], nums[L], nums[R]));
-                    while (L < R && nums[L] == nums[L + 1]) {
+                if(sum == 0){
+                    ans.add(Arrays.asList(nums[i],nums[L],nums[R]));
+                    //!!
+                    while (L<R && nums[L] == nums[L+1]) {
                         L++; // 去重
                     }
-                    while (L < R && nums[R] == nums[R - 1]) {
+                    while (L<R && nums[R] == nums[R-1]) {
                         R--; // 去重
                     }
                     L++;
                     R--;
                 } else if (sum < 0) {
                     L++;
-                } else if (sum > 0) {
+                } else {
                     R--;
                 }
             }
@@ -63,4 +65,4 @@ public class LC15 {
         return ans;
     }
 
-}
+    }

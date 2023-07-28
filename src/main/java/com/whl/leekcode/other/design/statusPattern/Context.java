@@ -1,22 +1,20 @@
 package com.whl.leekcode.other.design.statusPattern;
 
 /**
- * Context 是一个带有某个状态的类。
- * @author liaowenhui
- * @date 2022/10/14 14:39
+ * 定义一个上下文管理环境
  */
 public class Context {
-    private State state;
+    public final static ConcreteStateA contreteStateA = new ConcreteStateA();
+    public final static ConcreteStateB contreteStateB = new ConcreteStateB();
+    private State currentState;
+    public State getCurrentState() {return currentState;}
 
-    public Context(){
-        state = null;
+    public void setCurrentState(State currentState) {
+        this.currentState = currentState;
+        this.currentState.setContext(this);
     }
 
-    public void setState(State state){
-        this.state = state;
-    }
+    public boolean handle1() {return currentState.handle1();}
 
-    public State getState(){
-        return state;
-    }
+    public void handle2() {currentState.handle2();}
 }

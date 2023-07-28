@@ -11,7 +11,7 @@ public class LeekCode70 {
         int n = 5;
         System.out.println(climbStairs(n));
 
-        System.out.println(f(n));
+        System.out.println(fTest(n));
 
     }
 
@@ -34,6 +34,7 @@ public class LeekCode70 {
     }
 
     /**
+     * 自测 100%
      * 动态规划 考虑最后一步可能跨了一级台阶，也可能跨了两级台阶  转移方程: f(x)=f(x−1)+f(x−2)
      * 时间复杂度和空间复杂度都是 O(n) 的实现
      *
@@ -64,19 +65,20 @@ public class LeekCode70 {
     }
 
 
-   /* static int fTest(int n){
-        if (n<3){
+    static int fTest(int n) {
+        if (n <= 2){
             return n;
         }
+        int[] dp = new int[n + 1];
 
-        f(1) = 1;
-        f(2) = 2;
-        if (int i = 3,i <n ,i++){
-            f(i) = f(i-1) + f(i+1);
+        dp[0] = 0;
+        dp[1] = 1;
+        dp[2] = 2;
+        for (int i = 3; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
-
-
-    }*/
+        return dp[n];
+    }
 
 
 }

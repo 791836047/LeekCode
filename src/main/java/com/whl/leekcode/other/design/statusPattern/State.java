@@ -1,10 +1,15 @@
 package com.whl.leekcode.other.design.statusPattern;
 
 /**
- *  状态模式
+ * 定义一个抽象的状态类
  * @author liaowenhui
- * @date 2022/10/14 14:38
+ * @date 2023/7/27 14:26
  */
-public interface State {
-     void doAction(Context context);
+public abstract class State {
+    Context context;
+    public void setContext(Context context) {
+        this.context = context;
+    }
+    public abstract boolean handle1();
+    public abstract void handle2();
 }

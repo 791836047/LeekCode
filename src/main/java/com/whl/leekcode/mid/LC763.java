@@ -8,14 +8,13 @@ import java.util.List;
 
 /**
  * 划分字母区间
- * 字节
+ * 字节出现2次
  * @author liaowenhui
  * @date 2023/2/22 9:22
  */
 public class LC763 {
     public static void main(String[] args) {
-
-        List<Integer> result = partitionLabels("ababcbacadefegdehijhklij");
+        List<Integer> result = partitionLabelsTest("ababcbacadefegdehijhklij");
         System.out.println(result);
     }
 
@@ -27,11 +26,13 @@ public class LC763 {
      * @return
      */
     public static List<Integer> partitionLabels(String s) {
+        //last数组存储每个字母最后一次出现的下标位置
         int[] last = new int[26];
         int length = s.length();
         //遍历字符串，得到每个字母最后一次出现的下标位置。
         for (int i = 0; i < length; i++) {
-            //好比last[0] = 8 a的最后一次出现的下标位置为8   last[2] = 5，b
+            //好比last[0] = 8 a的最后一次出现的下标位置为8   last[1] = 5，b
+            //'a' 代表字符a的ASCII码值 97
             last[s.charAt(i) - 'a'] = i;
         }
         List<Integer> partition = new ArrayList<>();
@@ -42,7 +43,7 @@ public class LC763 {
             end = Math.max(end, last[s.charAt(i) - 'a']);
             //当访问到下标 end时，当前片段访问结束
             if (i == end) {
-                //长度为 end−start+1
+                //！！长度为 end−start+1
                 partition.add(end - start + 1);
                 start = end + 1;
             }
@@ -52,19 +53,26 @@ public class LC763 {
 
 
     public static List<Integer> partitionLabelsTest(String s) {
-
-        int length = s.length();
-        int[] ints = new int[]{};
-        List<Integer> result = new ArrayList<>();
-        for (int i = 0; i < length ; i++) {
-            ints[s.charAt(i) - 'a'] = i;
+        //!!length是int类型，不是String
+        int length =  s.length();
+        int[] last = new int[26];
+        for(int i=0; i<length; i++){
+            //!!注意charAt不是chatAt
+            last[s.charAt(i) - 'a'] = i;
         }
 
-        int end,start = 0;
-        for (int i = 0; i < length; i++) {
+        List<Integer> patition = new ArrayList();
+        //!!注意看这行怎么写，不能写成int start,end = 0;
+        int start = 0,end = 0;
+        for(int i= 0; i<length; i++){
+            end = Math.max(end,last[s.charAt(i) - 'a']);
 
+            if(i == end){
+                patition.add(end - start +1);
+                start = end + 1;
+            }
         }
 
-        return result;
+        return patition;
     }
 }

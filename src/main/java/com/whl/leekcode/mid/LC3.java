@@ -28,6 +28,7 @@ public class LC3 {
     public static int lengthOfLongestSubstring(String s) {
         // 哈希集合，记录每个字符是否出现过
         Set<Character> charSet = new HashSet<>();
+        //6
         int n = s.length();
         // 右指针rk，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动
         //mlStrSize为最长字符的大小
@@ -40,6 +41,7 @@ public class LC3 {
                 //!!不是rk
                 charSet.remove(s.charAt(lk - 1));
             }
+            //pwwkew
             while (rk + 1 < n && !charSet.contains(s.charAt(rk + 1))) {
                 // 不断地移动右指针
                 charSet.add(s.charAt(rk + 1));
