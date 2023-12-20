@@ -15,9 +15,6 @@ public class ThreadTest {
         thread.start();
         System.out.println("I am main thread");
 
-        System.out.println("第一次提交");
-        System.out.println("第二次提交");
-        System.out.println("第三次提交");
 
 
     }
