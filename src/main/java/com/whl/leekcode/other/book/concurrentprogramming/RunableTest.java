@@ -2,6 +2,7 @@ package com.whl.leekcode.other.book.concurrentprogramming;
 
 /**
  * 创建线程方式--实现Runnable接口的run方法。
+ *
  * @author JustJavaIt
  * @date 2022/2/12 16:21
  */
@@ -13,7 +14,7 @@ public class RunableTest {
         new Thread(task).start();
     }
 
-    public static class RunableTask implements Runnable{
+    public static class RunableTask implements Runnable {
 
         @Override
         public void run() {

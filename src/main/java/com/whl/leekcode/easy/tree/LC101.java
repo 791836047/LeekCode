@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * 对称二叉树(蓝湖2)
+ * 不懂 对称二叉树(蓝湖2)
  * @author liaowenhui
  * @date 2022/7/28 14:07
  */

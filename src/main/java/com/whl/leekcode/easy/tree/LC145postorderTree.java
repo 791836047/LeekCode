@@ -3,6 +3,8 @@ package com.whl.leekcode.easy.tree;
 import com.whl.leekcode.common.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -25,6 +27,8 @@ public class LC145postorderTree {
         node2.left = node3;
 
         System.out.println(postorderTraversal(head));
+        System.out.println(postorderTraversal2(head));
+
     }
 
     public static List<Integer> postorderTraversal(TreeNode root) {
@@ -42,5 +46,30 @@ public class LC145postorderTree {
         res.add(root.val);
     }
 
+
+    public static List<Integer> postorderTraversal2(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Deque<TreeNode> stk = new LinkedList<>();
+        if (root == null) {
+            return res;
+        }
+
+        stk.push(root);
+        while (!stk.isEmpty()) {
+            TreeNode node = stk.pop();
+            // 与前序遍历相反，后序遍历需要将节点值插入到结果列表的首部。
+            res.add(0, node.val);
+
+            // 注意先将左子节点压入栈，再将右子节点压入栈，这样弹出时就是右子节点先出栈，符合后序遍历顺序。
+            if (node.left != null) {
+                stk.push(node.left);
+            }
+            if (node.right != null) {
+                stk.push(node.right);
+            }
+        }
+
+        return res;
+    }
 
 }

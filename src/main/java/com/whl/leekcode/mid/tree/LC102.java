@@ -1,11 +1,8 @@
-package com.whl.leekcode.mid;
+package com.whl.leekcode.mid.tree;
 
 import com.whl.leekcode.common.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * 二叉树的层序遍历
@@ -31,6 +28,7 @@ public class LC102 {
         queue.offer(root);
         while (!queue.isEmpty()) {
             List<Integer> level = new ArrayList<>();
+            //!!注意queue.size()的位置,不能写在for循环里
             int currentLevelSize = queue.size();
             for (int i = 1; i <= currentLevelSize; ++i) {
                 TreeNode node = queue.poll();
@@ -48,6 +46,35 @@ public class LC102 {
         return ret;
     }
 
+    /**
+     * 20230806 自写90%
+     * @param root
+     * @return
+     */
+    public static List<List<Integer>> levelOrderTest(TreeNode root){
+        List<List<Integer>> res = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()){
+            List<Integer> lever = new ArrayList<>();
+            //!!
+            for (int i = 0; i < queue.size(); i++) {
+                TreeNode node = queue.poll();
+
+                lever.add(node.val);
+                if (null != node.left){
+                    queue.offer(node.left);
+                }
+                if (null != node.right){
+                    queue.offer(node.right);
+                }
+            }
+            res.add(lever);
+        }
+
+        return res;
+    }
+
     public static void main(String[] args) {
         //初始化 123321链表
         TreeNode head = new TreeNode(3);
@@ -63,6 +90,8 @@ public class LC102 {
         node2.right = node4;
 
         System.out.println(levelOrder(head));
+        System.out.println(levelOrderTest(head));
+
     }
 
 

@@ -25,6 +25,7 @@ public class methos2 {
         ListNode slow = head;
         ListNode fast = head.next;
         while (slow != fast) {
+            //快指针会先到达尽头（指向null或者null的下一个节点
             if (fast == null || fast.next == null) {
                 return false;
             }

@@ -32,6 +32,7 @@ public class method1 {
     }
 
     /**
+     * 自测100%
      * test
      * @param head
      * @return

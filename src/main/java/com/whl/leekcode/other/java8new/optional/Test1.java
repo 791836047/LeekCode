@@ -32,6 +32,7 @@ public class Test1 {
 
         // Optional.orElse - 如果值存在，返回它，否则返回默认值
         Integer value1 = a.orElse(new Integer(0));
+        //Integer value1 = a.orElseGet(() -> new Integer(0));
 
         //Optional.get - 获取值，值需要存在
         Integer value2 = b.get();

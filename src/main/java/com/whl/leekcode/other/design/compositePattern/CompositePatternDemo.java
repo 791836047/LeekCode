@@ -1,6 +1,7 @@
 package com.whl.leekcode.other.design.compositePattern;
 
 /**
+ * 组合模式
  * @author liaowenhui
  * @date 2023/7/26 14:01
  */

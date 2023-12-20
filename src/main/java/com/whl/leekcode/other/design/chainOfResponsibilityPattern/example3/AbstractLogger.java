@@ -1,4 +1,4 @@
-package com.whl.leekcode.other.design.chainOfResponsibilityPattern;
+package com.whl.leekcode.other.design.chainOfResponsibilityPattern.example3;
 
 /** 责任链模式
  * @author liaowenhui

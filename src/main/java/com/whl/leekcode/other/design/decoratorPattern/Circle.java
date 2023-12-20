@@ -1,7 +1,7 @@
 package com.whl.leekcode.other.design.decoratorPattern;
 
 /**
- *
+ * 装饰器模式
  * @author liaowenhui
  * @date 2023/4/6 10:22
  */

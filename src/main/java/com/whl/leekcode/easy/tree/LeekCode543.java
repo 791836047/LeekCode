@@ -1,8 +1,9 @@
-package com.whl.leekcode.easy;
+package com.whl.leekcode.easy.tree;
 
 import com.whl.leekcode.common.TreeNode;
 
 /**
+ * 二叉树的直径
  * 拼多多1
  * @author liaowenhui
  * @date 2022/6/29 18:28

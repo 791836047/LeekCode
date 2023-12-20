@@ -45,11 +45,15 @@ public class LC94inorderTree {
      */
     public static List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-        //递归函数
         inorder(root, res);
         return res;
     }
 
+    /**
+     * 递归函数
+     * @param root
+     * @param res
+     */
     public static void inorder(TreeNode root, List<Integer> res) {
         if (root == null) {
             return;
@@ -71,12 +75,16 @@ public class LC94inorderTree {
         //栈,注意存的是树节点！！
         Deque<TreeNode> stk = new LinkedList<>();
         while (root != null || !stk.isEmpty()) {
+            // 将当前节点及其所有左子节点都压入栈，直到没有左子节点为止。
             while (root != null) {
                 stk.push(root);
                 root = root.left;
             }
+            // 弹出栈顶节点，该节点的值是当前子树中最左侧的节点，加入结果列表。
             root = stk.pop();
             res.add(root.val);
+
+            // 处理当前节点的右子树，如果右子节点不为空，继续遍历右子树的左子节点。
             root = root.right;
         }
         return res;

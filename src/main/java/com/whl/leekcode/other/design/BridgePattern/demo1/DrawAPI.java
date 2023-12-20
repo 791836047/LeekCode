@@ -1,0 +1,9 @@
+package com.whl.leekcode.other.design.BridgePattern.demo1;
+
+/**
+ * @author liaowenhui
+ * @date 2023/11/6 17:48
+ */
+public interface DrawAPI {
+    public void drawCircle(int radius, int x, int y);
+}

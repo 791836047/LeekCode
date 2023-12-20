@@ -6,6 +6,7 @@ import java.util.concurrent.FutureTask;
 
 /**
  * 创建线程方式--使用FutureTask方式 Page21
+ *
  * @author JustJavaIt
  */
 public class FutureTasktest {
@@ -19,7 +20,7 @@ public class FutureTasktest {
         try {
             //等待任务执行完毕，并返回结果。
             result = futureTask.get();
-            System.out.println("result:"+ result);
+            System.out.println("result:" + result);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -30,7 +31,7 @@ public class FutureTasktest {
     /**
      * 创建任务类，类似Runable
      */
-    public static class CallerTask implements Callable<String>{
+    public static class CallerTask implements Callable<String> {
 
         @Override
         public String call() throws Exception {
