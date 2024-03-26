@@ -1,6 +1,9 @@
 package com.whl.leekcode.other.book.concurrentprogramming;
 
 /**
+ * page34
+ * 线程A调用线程B的 join 方法后会被阻塞,当其他线程调用了线程A
+ * intrrupt（）方法中断了线程A时，线程A会抛出 InterruptedException 异常而返回。
  * @author liaowenhui
  * @date 2022/2/14 20:17
  */

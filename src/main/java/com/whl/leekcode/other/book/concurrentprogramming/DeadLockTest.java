@@ -1,7 +1,7 @@
 package com.whl.leekcode.other.book.concurrentprogramming;
 
 /**
- * 线程死锁 Page47
+ * 线程死锁 Page47 Page50 一起
  * @author liaowenhui
  * @date 2022/2/16 11:18
  */

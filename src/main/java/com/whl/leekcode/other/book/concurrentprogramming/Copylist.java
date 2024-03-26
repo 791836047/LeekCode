@@ -5,6 +5,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Page129
+ * CopyOnWriteArrayList提供了弱一致性的迭代器（弱一致性是指返回迭代器后，其他线程对list的增删改对迭代器是不可见的），从而保证在获取迭代器后，
+ * 其他线程对list的修改是不可见的，迭代器遍历的数组是一个快照。
  * @author liaowenhui
  * @date 2022/2/22 18:38
  */

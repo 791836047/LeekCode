@@ -2,6 +2,7 @@ package com.whl.leekcode.other.book.concurrentprogramming;
 
 /**
  *  Page44
+ *  调用 interrupted （） 方法后中断标志被清除了
  * @author liaowenhui
  * @date 2022/2/15 11:09
  */

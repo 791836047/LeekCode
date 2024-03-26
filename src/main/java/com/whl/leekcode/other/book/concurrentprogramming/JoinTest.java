@@ -38,6 +38,13 @@ public class JoinTest {
 
         System.out.println("wait all child thread over!");
 
+        /**
+         * 虽然主线程在等待 threadOne 执行完成后才会执行 threadTwo.join();，但这并不会影响 threadTwo 的实际执行顺序。
+         * 主线程等待的顺序只是决定了主线程等待子线程执行完成的顺序，并不影响子线程的并发执行。
+         * 所以，threadOne.join(); 和 threadTwo.join(); 决定了主线程等待子线程执行完毕的顺序，但不会直接影响子线程的执行顺序。
+         * 因此，子线程 "child threadOne over!" 和 "child threadTwo over!" 的实际打印顺序仍然是不确定的，取决于线程调度和执行情况。
+         *
+         */
         //主线程让出执行权，等待子线程执行完毕,返回
         //注释再运行看看
         threadTwo.join();

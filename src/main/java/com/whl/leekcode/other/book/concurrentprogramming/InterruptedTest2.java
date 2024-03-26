@@ -13,7 +13,7 @@ public class InterruptedTest2 {
             public void run() {
                 try {
                     System.out.println("ThreadOne begin sleep for 2000s");
-                    Thread.sleep(2000000);
+                    Thread.sleep(20000);
                     System.out.println("ThreadOne awaking");
                 } catch (InterruptedException e) {
                     System.out.println("ThreadOne is interrupted while sleeping");

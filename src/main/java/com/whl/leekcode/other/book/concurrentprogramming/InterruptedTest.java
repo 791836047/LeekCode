@@ -1,6 +1,8 @@
 package com.whl.leekcode.other.book.concurrentprogramming;
 
 /**
+ * page42
+ * 看一个线程使用 Int rrupted 优雅退出的经典例子
  * @author liaowenhui
  * @date 2022/2/15 11:05
  */

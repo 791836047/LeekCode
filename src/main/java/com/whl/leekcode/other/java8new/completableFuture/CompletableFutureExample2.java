@@ -3,8 +3,9 @@ package com.whl.leekcode.other.java8new.completableFuture;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * chatgpt: 可以举个例子突显CompletableFuture比起使用线程池异步任务的管理和组合更加简单和直观
+ * 将多个 CompletableFuture 进行组合。一种方法是使用thenCompose方法
  *
+ * chatgpt: 可以举个例子突显CompletableFuture比起使用线程池异步任务的管理和组合更加简单和直观
  * 当涉及多个异步任务的依赖和组合时，CompletableFuture相比使用普通线程池来说，确实可以更加简单和直观。让我们来看一个实际的例子来突显这一点。
  *
  * 假设我们需要实现一个简单的异步任务处理流程：

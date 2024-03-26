@@ -15,8 +15,6 @@ public class ThreadTest {
         thread.start();
         System.out.println("I am main thread");
 
-
-
     }
 
     /**

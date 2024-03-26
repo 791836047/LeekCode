@@ -15,10 +15,17 @@ public class CompletableFutureCustomThreadPoolExample {
         // 创建一个自定义线程池，使用固定大小的线程池
         ExecutorService customThreadPool = Executors.newFixedThreadPool(4);
 
+        /**
+         * supplyAsync()
+         * 返回一个新的CompletableFuture，该CompletableFuture将由在给定执行器中运行的任务异步完成，
+         * 该任务的值是通过调用给定的Supplier获得的。
+         *
+         * 如果你创建一个 CompletableFuture 而没有指定线程池，它会使用默认的 ForkJoinPool 实例来执行任务。
+         */
         // 异步执行任务，并指定自定义线程池
         CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
             System.out.println("异步任务在线程: " + Thread.currentThread().getName());
-            return "任务执行结果";
+            return "成功";
         }, customThreadPool);
 
         // 使用get()方法等待任务完成并获取结果

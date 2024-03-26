@@ -2,6 +2,7 @@ package com.whl.leekcode.other.book.concurrentprogramming.threadlocal;
 
 /**
  * Page56
+ *
  * @author liaowenhui
  * @date 2022/2/17 11:14
  */
@@ -16,8 +17,8 @@ public class ThreadLocalTest {
     //创建ThreadLocal变量
     static ThreadLocal<String> localVariable = new ThreadLocal<>();
 
-    //创建线程one
     public static void main(String[] args) {
+        //创建线程one
         Thread threadOne = new Thread(() -> {
             //设置线程One中本地变量loalVariable的值
             localVariable.set("threadOne local variable");
@@ -26,6 +27,7 @@ public class ThreadLocalTest {
             //打印本地变量值
             System.out.println("threadOne remove after" + ":" + localVariable.get());
         });
+
         //创建线程two
         Thread threadTwo = new Thread(new Runnable() {
             @Override

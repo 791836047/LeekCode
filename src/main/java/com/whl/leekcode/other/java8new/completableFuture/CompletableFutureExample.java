@@ -28,19 +28,19 @@ public class CompletableFutureExample {
     }
 
     public static void main(String[] args) {
-        CompletableFuture<String> dataFromSite1 = fetchDataFromWebsite("Website 1");
-        CompletableFuture<String> dataFromSite2 = fetchDataFromWebsite("Website 2");
-        CompletableFuture<String> dataFromSite3 = fetchDataFromWebsite("Website 3");
+        CompletableFuture<String> dataFromBaidu = fetchDataFromWebsite("baidu");
+        CompletableFuture<String> dataFromSohu = fetchDataFromWebsite("sohu");
+        CompletableFuture<String> dataFromGoogle = fetchDataFromWebsite("google");
 
         // 使用allOf方法等待所有任务完成
-        CompletableFuture<Void> allTasks = CompletableFuture.allOf(dataFromSite1, dataFromSite2, dataFromSite3);
+        CompletableFuture<Void> allTasks = CompletableFuture.allOf(dataFromBaidu, dataFromSohu, dataFromGoogle);
 
         // 在所有任务完成后，合并数据并返回结果
         CompletableFuture<String> combinedResult = allTasks.thenApply(v -> {
             try {
-                String result1 = dataFromSite1.get();
-                String result2 = dataFromSite2.get();
-                String result3 = dataFromSite3.get();
+                String result1 = dataFromBaidu.get();
+                String result2 = dataFromSohu.get();
+                String result3 = dataFromGoogle.get();
 
                 return result1 + "\n" + result2 + "\n" + result3;
             } catch (InterruptedException | ExecutionException e) {
