@@ -5,5 +5,11 @@ package com.whl.leekcode.other.design.BridgePattern.demo1;
  * @date 2023/11/6 17:48
  */
 public interface DrawAPI {
+    /**
+     * radius半径
+     * @param radius
+     * @param x
+     * @param y
+     */
     public void drawCircle(int radius, int x, int y);
 }

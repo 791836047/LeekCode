@@ -29,8 +29,8 @@ public class TestMyStack {
      * Initialize your data structure here.
      */
     public TestMyStack() {
-        queue1  = new LinkedList<>();
-        queue2  = new LinkedList<>();
+        queue1 = new LinkedList<>();
+        queue2 = new LinkedList<>();
     }
 
     /**
@@ -38,31 +38,37 @@ public class TestMyStack {
      * 将元素 x 压入栈顶
      */
     public void push(int x) {
-        queue2.offer(x);
-        while (!queue1.isEmpty()) {
-            queue2.offer(queue1.poll());
+        queue1.offer(x);
+        while (!queue2.isEmpty()) {
+            queue1.offer(queue2.poll());
         }
-        Deque<Integer> temp = new LinkedList<>();
-        temp = queue2;
-        queue2 = queue1;
-        queue1 =temp;
 
+        Deque<Integer> temp;
+        temp = queue1;
+        queue1 = queue2;
+        queue2 = temp;
     }
 
     /**
      * Removes the element on top of the stack and returns that element.
-     *  移除并返回栈顶元素。
+     * 移除并返回栈顶元素。
      */
     public int pop() {
-       return queue1.poll();
+        if (!queue2.isEmpty()) {
+            return queue2.poll();
+        }
+        return -1;
     }
 
     /**
      * Get the top element.
-     *  返回栈顶元素
+     * 返回栈顶元素
      */
     public int top() {
-        return queue1.peek();
+        if (!queue2.isEmpty()) {
+            return queue2.peek();
+        }
+        return -1;
     }
 
     /**
@@ -70,11 +76,7 @@ public class TestMyStack {
      * 如果栈是空的，返回 true ；否则，返回 false
      */
     public boolean empty() {
-        if (queue1.isEmpty()){
-            return true;
-        }
-        return false;
-
+        return queue2.isEmpty();
     }
 
 }

@@ -1,6 +1,7 @@
 package com.whl.leekcode.other.design.BuilderPattern;
 
 /**
+ * 用纸盒包装
  * @author liaowenhui
  * @date 2023/10/30 16:06
  */

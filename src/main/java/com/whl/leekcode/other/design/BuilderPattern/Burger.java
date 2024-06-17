@@ -11,6 +11,10 @@ public abstract class Burger implements Item {
         return new Wrapper();
     }
 
+    /**
+     * 可不写
+     * @return
+     */
     @Override
     public abstract float price();
 }

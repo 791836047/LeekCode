@@ -48,8 +48,7 @@ public class Offer09 {
         if (stack2.isEmpty()) {
             return -1;
         } else {
-            int deleteItem = stack2.pop();
-            return deleteItem;
+            return stack2.pop();
         }
     }
 

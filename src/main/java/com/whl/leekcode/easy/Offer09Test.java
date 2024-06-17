@@ -39,21 +39,17 @@ public class Offer09Test {
      * @return
      */
     public int deleteHead() {
-        if (!stack2.isEmpty()){
-           return stack2.pop();
+        if (stack2.isEmpty()){
+            while (!stack1.isEmpty()){
+                stack2.push(stack1.pop());
+            }
         }
-        //stack2为空
 
-        if (stack1.isEmpty()){
+        if (stack2.isEmpty()){
             return -1;
         }
 
-        while (!stack1.isEmpty()){
-            stack2.push(stack1.pop());
-        }
-
         return stack2.pop();
-
     }
 
 

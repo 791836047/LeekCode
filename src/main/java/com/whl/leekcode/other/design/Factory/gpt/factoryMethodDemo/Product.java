@@ -1,0 +1,10 @@
+package com.whl.leekcode.other.design.Factory.gpt.factoryMethodDemo;
+
+/**
+ * 产品接口
+ * @author 79183
+ * @date 2024/6/14 11:24
+ */
+interface Product {
+    void use();
+}

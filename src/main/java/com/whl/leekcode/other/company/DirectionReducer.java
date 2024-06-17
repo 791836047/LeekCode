@@ -4,6 +4,11 @@ import java.util.*;
 
 /**
  * 美的1
+ * java编程题如下：从前，在穿越古老荒野的西部山区的途中有个人为大家指引方向，方向有[NORTH] 、[SOUTH]、[WEST]、【EAST]。显然[NORTH] 和[SOUTH] 相反，[WEST]和 【EAST]也相反，如果先朝向某一方向再转向相反的方向便容易徒劳无功。由于这是狂野的西部，天气恶劣且缺水，因此保持体能十分重要，否则您可能会口渴而死! 需要凭借智慧越过这些多山的沙漠。
+ * 该男子给出的指示示例如下:[“NORTH”，“SOUTH”， ”SOUTH”，"EAST，"WEST“，"NORTH”，”WEST“】。
+ * 您可以立即看出向 [NORTH] 后立即向[SOUTH]是不合理的，此时最好留在原地!所以我们的任务是简化男子给出的指示。
+ * 而上述例子中简化后的计划是:WEST 下面是我们的任务: 编写一个函数 dirReduc，它将获取一个字符串数组并返回一个字符串数组，
+ * 返回的字符串数组中删除了不必要的方向（相邻的W<->E或S<->N)。
  *
  * @author 79183
  * @date 2024/3/26 14:38
@@ -52,7 +57,7 @@ public class DirectionReducer {
      */
     public static String[] dirReduc2(String[] directions) {
         // 定义相反的方向
-        Map<String, String> opposites = new HashMap<>();
+        Map<String, String> opposites = new HashMap<>(4);
         opposites.put("NORTH", "SOUTH");
         opposites.put("SOUTH", "NORTH");
         opposites.put("EAST", "WEST");
@@ -88,6 +93,26 @@ public class DirectionReducer {
          * 但我们并不关心数组的初始大小，Java会根据堆栈中元素的数量自动调整数组的大小。
          */
         // 将栈中的方向转换为字符串数组
+        return stack.toArray(new String[0]);
+    }
+
+    public static String[] dirReducTest(String[] directions) {
+        Map<String,String> opposites = new HashMap(3);
+        opposites.put("NORTH", "SOUTH");
+        opposites.put("SOUTH", "NORTH");
+        opposites.put("EAST", "WEST");
+        opposites.put("WEST", "EAST");
+
+        Deque<String> stack = new LinkedList<>();
+
+        for (String direction : directions) {
+            if (!stack.isEmpty() && stack.peek().equals(opposites.get(direction))){
+                stack.pop();
+            }else {
+                stack.push(direction);
+            }
+        }
+
         return stack.toArray(new String[0]);
     }
 
