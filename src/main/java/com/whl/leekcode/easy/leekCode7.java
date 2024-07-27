@@ -8,9 +8,30 @@ package com.whl.leekcode.easy;
  */
 public class leekCode7 {
 
+    /**
+     * 时间复杂度：O(log∣x∣)。翻转的次数即 x 十进制的位数。
+     * 空间复杂度：O(1)。
+     *
+     * 示例 1：
+     * 输入：x = 123
+     * 输出：321
+     *
+     * 示例 2：
+     * 输入：x = -123
+     * 输出：-321
+     *
+     * 示例 3：
+     * 输入：x = 120
+     * 输出：21
+     *
+     * 示例 4：
+     * 输入：x = 0
+     * 输出：0
+     * @param args
+     */
     public static void main(String[] args) {
         int x = -123;
-        System.out.println(testReverse(x));
+        System.out.println(reverse(x));
     }
 
     public static int reverse(int x) {

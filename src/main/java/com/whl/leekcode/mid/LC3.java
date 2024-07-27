@@ -15,7 +15,7 @@ public class LC3 {
 
     public static void main(String[] args) {
         String str = "pwwkew";
-        int result = lengthOfLongestSubstring(str);
+        int result = lengthOfLongestSubstring2(str);
         System.out.println("最长字串为:" + result);
     }
 
@@ -55,26 +55,30 @@ public class LC3 {
     }
 
     /**
-     * 自写
+     * 滑动窗口 优化版 推荐
+     * 你使用 i 和 j 两个指针来表示窗口的左边界和右边界。
+     * 当窗口内的字符没有重复时，你将右边界 j 向右移动，扩大窗口。
+     * 当窗口内的字符出现重复时，你将左边界 i 向右移动，缩小窗口。
+     * 测试  pwwkew
      * @param s
      * @return
      */
     public static int lengthOfLongestSubstring2(String s) {
-        HashSet<Character> charSet = new HashSet<>();
-        int rk = -1,mlStrSize = 0;
-        int length = s.length();
-        for (int i = 0; i < length; i++) {
-            if (rk != -1){
-                charSet.remove(s.charAt(rk));
+        int n = s.length();
+        Set<Character> set = new HashSet<>();
+        int ans = 0, i = 0, j = 0;
+        while (j < n) {
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j));
+                ans = Math.max(ans, j - i + 1);
+                j++;
+            } else {
+                set.remove(s.charAt(i));
+                i++;
             }
-
-            while (rk + 1 < length && !charSet.contains(s.charAt(rk + 1))) {
-                charSet.add(s.charAt(rk + 1));
-                ++rk;
-            }
-            mlStrSize = Math.max(mlStrSize,charSet.size());
         }
-        return mlStrSize;
+        return ans;
     }
+
 
 }

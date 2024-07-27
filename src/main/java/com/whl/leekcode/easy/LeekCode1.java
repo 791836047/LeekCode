@@ -16,7 +16,7 @@ public class LeekCode1 {
     public static void main(String[] args) {
         int[] nums = new int[]{2,7,11,15};
         int taget = 9;
-        System.out.println(Arrays.toString(twoSum(nums, taget)));
+        System.out.println(Arrays.toString(twoSum2(nums, taget)));
     }
 
     /**
@@ -46,8 +46,8 @@ public class LeekCode1 {
      * @param target
      * @return
      */
-    public int[] twoSum2(int[] nums, int target) {
-        //!泛型不支持基本数据类型
+    public static int[] twoSum2(int[] nums, int target) {
+        //!泛型不支持基本数据类型 Map<具体值，数组索引的位置>
         Map<Integer, Integer> hashtable = new HashMap<>();
         //!注意是分号不是逗号
         for (int i = 0; i < nums.length; ++i) {

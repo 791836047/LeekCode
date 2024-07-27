@@ -1,4 +1,4 @@
-package com.whl.leekcode.other.design.decoratorPattern;
+package com.whl.leekcode.other.design.decoratorPattern.cainiao;
 
 /**
  *  创建实现了 Shape 接口的抽象装饰类。

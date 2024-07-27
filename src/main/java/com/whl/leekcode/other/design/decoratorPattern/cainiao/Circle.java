@@ -1,4 +1,4 @@
-package com.whl.leekcode.other.design.decoratorPattern;
+package com.whl.leekcode.other.design.decoratorPattern.cainiao;
 
 /**
  * 装饰器模式

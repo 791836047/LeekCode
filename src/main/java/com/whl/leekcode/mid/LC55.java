@@ -9,7 +9,7 @@ public class LC55 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{2, 0, 3, 1, 1, 4};
-        System.out.println(canJumpTest(nums));
+        System.out.println(canJump(nums));
     }
 
     /**

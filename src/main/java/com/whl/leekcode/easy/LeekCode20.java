@@ -18,12 +18,12 @@ public class LeekCode20 {
     public static void main(String[] args) {
         //false
         String s = "([)]";
-        System.out.println(isValid(s));
+        System.out.println(isValid2(s));
         //true
         String s1 = "()[]{}";
-        System.out.println(isValid(s1));
+        System.out.println(isValid2(s1));
         String s4 = "([]]";
-        System.out.println(isValid(s4));
+        System.out.println(isValid2(s4));
 
         System.out.println("-----------------------------------------------");
 
@@ -80,7 +80,7 @@ public class LeekCode20 {
         }
         //为了快速判断括号的类型，我们可以使用哈希表存储每一种括号。哈希表的键为右括号，值为相同类型的左括号。
         //!!注意怎么初始化的
-        Map<Character, Character> pairs = new HashMap<Character, Character>(6) {{
+        Map<Character, Character> charMap = new HashMap<Character, Character>(6) {{
             put(')', '(');
             put(']', '[');
             put('}', '{');
@@ -91,10 +91,10 @@ public class LeekCode20 {
         for (int i = 0; i < n; i++) {
             char ch = s.charAt(i);
             //如果是右括号，如果栈为空(说明没有对应的左括号)或者如果栈顶的左括号和对应的左括号不同的话，不符
-            if (pairs.containsKey(ch)) {
+            if (charMap.containsKey(ch)) {
                 //peek():查看该堆栈顶部的对象，而不将其从堆栈中删除  ！！
                 //!! 别忘了判断stack.isEmpty()
-                if (stack.isEmpty() || !stack.peek().equals(pairs.get(ch))) {
+                if (stack.isEmpty() || !stack.peek().equals(charMap.get(ch))) {
                     return false;
                 }
                 //栈顶的左括号和对应的左括号相同，出栈

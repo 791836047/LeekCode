@@ -1,4 +1,4 @@
-package com.whl.leekcode.other.design.decoratorPattern;
+package com.whl.leekcode.other.design.decoratorPattern.cainiao;
 
 /**
  * 创建扩展了 ShapeDecorator 类的实体装饰类。

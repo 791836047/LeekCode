@@ -3,6 +3,7 @@ package com.whl.leekcode.mid;
 import com.whl.leekcode.common.ListNode;
 
 /**
+ * 两数相加  不懂
  * @author liaowenhui
  * @date 2023/7/31 8:50
  */
@@ -22,7 +23,7 @@ public class LC2 {
         l6.setNext(l24);
 
         LC2 lc2 = new LC2();
-        ListNode listNode = lc2.addTwoNumbersTest(l1, l5);
+        ListNode listNode = lc2.addTwoNumbers2(l1, l5);
 
         while (null != listNode) {
             System.out.print(listNode.getDate() + " ");
@@ -65,6 +66,44 @@ public class LC2 {
             cur.next = new ListNode(carry);
         }
         return pre.next;
+    }
+
+    /**
+     * 官方  推荐写法
+     * 2-4-3
+     * 5-6-4
+     * 7-0-8
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+        ListNode head = null, tail = null;
+        //进位
+        int carry = 0;
+        while (l1 != null || l2 != null) {
+            int n1 = l1 != null ? l1.date : 0;
+            int n2 = l2 != null ? l2.date : 0;
+            int sum = n1 + n2 + carry;
+            if (head == null) {
+                //注意head 和 tail 都指向同一个节点。
+                head = tail = new ListNode(sum % 10);
+            } else {
+                tail.next = new ListNode(sum % 10);
+                tail = tail.next;
+            }
+            carry = sum / 10;
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+        if (carry > 0) {
+            tail.next = new ListNode(carry);
+        }
+        return head;
     }
 
     /**
