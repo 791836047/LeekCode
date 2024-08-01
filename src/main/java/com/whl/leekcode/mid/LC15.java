@@ -30,7 +30,7 @@ public class LC15 {
         if(len < 3) {
             return ans;
         }
-        // 排序
+        // 排序  -4，-1，-1，0，1，2
         Arrays.sort(nums);
         for (int i = 0; i < len ; i++) {
             if(nums[i] > 0) {
@@ -53,6 +53,7 @@ public class LC15 {
                     while (L<R && nums[R] == nums[R-1]) {
                         R--; // 去重
                     }
+                    //!!同时
                     L++;
                     R--;
                 } else if (sum < 0) {

@@ -6,7 +6,7 @@ package com.whl.leekcode.mid;
  * @author liaowenhui
  * @date 2023/4/7 9:24
  */
-public class HOT11 {
+public class LC10 {
 
     /**
      * 时间复杂度：O(N)，双指针总计最多遍历整个数组一次。
@@ -18,6 +18,7 @@ public class HOT11 {
         int l = 0, r = height.length - 1;
         int ans = 0;
         while (l < r) {
+            //注意长是r-1
             int area = Math.min(height[l], height[r]) * (r - l);
             ans = Math.max(ans, area);
             if (height[l] <= height[r]) {

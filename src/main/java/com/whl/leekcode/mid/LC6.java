@@ -42,11 +42,22 @@ public class LC6 {
         for(int i = 0; i < numRows; i++) {
             rows.add(new StringBuilder());
         }
-        int i = 0, flag = -1;
+        /*int i = 0, flag = -1;
         for(char c : s.toCharArray()) {
             rows.get(i).append(c);
             if(i == 0 || i == numRows -1) {
                 flag = - flag;
+            }
+            i += flag;
+        }*/
+        //写法2
+        int i = 0, flag = 1; // flag 初始值改为 1
+        for (char c : s.toCharArray()) {
+            rows.get(i).append(c);
+            if (i == 0) {
+                flag = 1; // 当到达第一行时，向下移动
+            } else if (i == numRows - 1) {
+                flag = -1; // 当到达最后一行时，向上移动
             }
             i += flag;
         }
