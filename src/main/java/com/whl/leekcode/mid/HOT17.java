@@ -55,9 +55,12 @@ public class HOT17 {
             combinations.add(combination.toString());
         } else {
             char digit = digits.charAt(index);
+            //abc  def
             String letters = phoneMap.get(digit);
+            //3
             int lettersCount = letters.length();
             for (int i = 0; i < lettersCount; i++) {
+                //ad
                 combination.append(letters.charAt(i));
                 backtrack(combinations, phoneMap, digits, index + 1, combination);
                 combination.deleteCharAt(index);
