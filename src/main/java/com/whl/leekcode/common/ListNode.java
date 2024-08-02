@@ -18,7 +18,7 @@ public class ListNode {
         this.date = date;
     }
 
-    ListNode(int date, ListNode next) {
+    public ListNode(int date, ListNode next) {
         this.date = date;
         this.next = next;
     }

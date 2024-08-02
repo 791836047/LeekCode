@@ -1,0 +1,1 @@
+![1722579339169](C:\Users\79183\AppData\Local\Temp\1722579339169.png)
