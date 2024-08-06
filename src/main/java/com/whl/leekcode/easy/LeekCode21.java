@@ -25,7 +25,7 @@ public class LeekCode21 {
         l2.setNext(node3);
         node3.setNext(node4);
 
-        ListNode listNode = mergeTwoLists(l1, l2);
+        ListNode listNode = mergeTwoLists2(l1, l2);
         //ListNode listNode = mergeTwoLists2(l1, l2);
 
         while (null != listNode) {
@@ -62,10 +62,11 @@ public class LeekCode21 {
      * @param l2
      * @return
      */
-    public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+    public static ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
         ListNode prehead = new ListNode(-1);
 
         ListNode prev = prehead;
+        //！！是&&
         while (l1 != null && l2 != null) {
             if (l1.date <= l2.date) {
                 prev.next = l1;

@@ -11,7 +11,8 @@ import java.util.List;
 public class HOT22 {
 
     /**
-     * 回溯算法（深度优先遍历）
+     * 回溯算法（深度优先遍历） + 减枝
+     * https://leetcode.cn/problems/generate-parentheses/solutions/35947/hui-su-suan-fa-by-liweiwei1419/
      * @param n
      * @return
      */
@@ -28,20 +29,34 @@ public class HOT22 {
     }
 
     /**
+     * 因为每一次尝试，都使用新的字符串变量，所以无需回溯,在递归终止的时候，直接把它添加到结果集即可，注意与「力扣」第 46 题、第 39 题区分
+     *
+     * 回溯算法的框架：
+     *        result = []
+     *        def backtrack(路径, 选择列表):
+     *            if 满足结束条件:
+     *                result.add(路径)
+     *                return
+     *
+     *            for 选择 in 选择列表:
+     *                做选择
+     *                backtrack(路径, 选择列表)
+     *                撤销选择
+     *
      * @param curStr 当前递归得到的结果
      * @param left   左括号还有几个可以使用
      * @param right  右括号还有几个可以使用
      * @param res    结果集
      */
     private static void dfs(String curStr, int left, int right, List<String> res) {
-        // 因为每一次尝试，都使用新的字符串变量，所以无需回溯
-        // 在递归终止的时候，直接把它添加到结果集即可，注意与「力扣」第 46 题、第 39 题区分
+
+        //在左边和右边剩余的括号数都等于 0 的时候结算。
         if (left == 0 && right == 0) {
             res.add(curStr);
             return;
         }
 
-        // 剪枝（如图，左括号可以使用的个数严格大于右括号可以使用的个数，才剪枝，注意这个细节）
+        // 剪枝（左括号可以使用的个数严格大于右括号可以使用的个数，才剪枝，好比第一个肯定是左括号）
         if (left > right) {
             return;
         }
