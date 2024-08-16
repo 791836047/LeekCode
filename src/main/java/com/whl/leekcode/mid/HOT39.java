@@ -5,10 +5,17 @@ import java.util.*;
 /**
  * https://leetcode.cn/problems/combination-sum/solutions/14697/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/?orderBy=most_votes
  * 回溯算法 + 剪枝
+ *
  * @author liaowenhui
  * @date 2023/4/12 20:18
  */
 public class HOT39 {
+
+    public static void main(String[] args) {
+
+        System.out.println(combinationSum(new int[]{2, 3, 5}, 8));
+    }
+
 
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
@@ -17,23 +24,22 @@ public class HOT39 {
         }
 
         Deque<Integer> path = new LinkedList<>();
-        dfs(candidates, 0,  target, path, res);
+        dfs(candidates, 0, target, path, res);
         return res;
     }
 
     /**
-     *
-     *   回溯算法的框架：
-     *    result = []
-     *     def backtrack(选择列表,路径):
-     *         if 满足结束条件:
-     *             result.add(路径)
-     *             return
-     *
-     *           for 选择 in 选择列表:
-     *             做选择
-     *             backtrack(选择列表,路径)
-     *             撤销选择
+     * 回溯算法的框架：
+     * result = []
+     * def backtrack(选择列表,路径):
+     * if 满足结束条件:
+     * result.add(路径)
+     * return
+     * <p>
+     * for 选择 in 选择列表:
+     * 做选择
+     * backtrack(选择列表,路径)
+     * 撤销选择
      *
      * @param candidates 候选数组
      * @param begin      搜索起点
@@ -63,11 +69,5 @@ public class HOT39 {
             path.removeLast();
         }
     }
-
-    public static void main(String[] args) {
-
-        System.out.println(combinationSum(new int[]{2,3,6,7}, 7));
-    }
-
 
 }

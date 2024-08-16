@@ -3,7 +3,7 @@ package com.whl.leekcode.mid;
 import java.util.Arrays;
 
 /**
- * 下一个排列
+ * 下一个排列  难理解
  *
  * @author 79183
  * @date 2024/8/6 10:43
@@ -11,9 +11,9 @@ import java.util.Arrays;
 public class HOT31 {
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 4, 3};
+        int[] nums = {1, 2, 4, 5, 3};
         nextPermutation(nums);
-        //1,3,2,4,
+        //1,2,5,3,4,
         System.out.println("result:" + Arrays.toString(nums));
     }
 
@@ -26,7 +26,6 @@ public class HOT31 {
      */
     public static void nextPermutation(int[] nums) {
         int i = nums.length - 2;
-        //先比较最后两位
         while (i >= 0 && nums[i] >= nums[i + 1]) {
             i--;
         }
