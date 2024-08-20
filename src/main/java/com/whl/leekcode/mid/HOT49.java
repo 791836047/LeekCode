@@ -32,22 +32,8 @@ public class HOT49 {
             map.put(key, list);
         }
         //!!注意map.values()返回的格式
-        return new ArrayList<List<String>>(map.values());
+        return new ArrayList<>(map.values());
     }
-
-/*    public List<List<String>> groupAnagramsTest(String[] strs) {
-        Map<String,List<String>> map = new HashMap<>();
-        Long size = strs.size();
-        for(int i = 0; i < size; i++){
-            //char[] array = str.toCharArray();
-            String[] toChar =  strs[i].toChar();
-            String key = new string(toChar.sort);
-            List<String> list =  MAP.getOrDefault(res.get(key),new ArrayList());
-            list.add(strs[i]);
-            map.put(key,list);
-        }
-        return map.values;
-    }*/
 
     public static void main(String[] args) {
         String[] strs = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};

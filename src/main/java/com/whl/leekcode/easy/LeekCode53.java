@@ -25,7 +25,7 @@ public class LeekCode53 {
         // dp[i] 表示：以 nums[i] 结尾的连续子数组的最大和
         int[] dp = new int[len];
         dp[0] = nums[0];
-
+        //!! 注意是从i=1开始的
         for (int i = 1; i < len; i++) {
             if (dp[i - 1] > 0) {
                 dp[i] = dp[i - 1] + nums[i];
@@ -43,6 +43,7 @@ public class LeekCode53 {
     }
 
     /**
+     * dp[i] 表示：以 nums[i] 结尾的连续子数组的最大和
      * 根据「状态转移方程」，dp[i] 的值只和 dp[i - 1] 有关，因此可以使用「滚动变量」的方式将代码进行优化。
      **
      * 时间复杂度 O(n)、空间复杂度 O(1)
