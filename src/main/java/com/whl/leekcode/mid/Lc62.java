@@ -1,7 +1,7 @@
 package com.whl.leekcode.mid;
 
 /**
- * 不同路径  7.25写
+ * 不同路径  HOT62
  * @author liaowenhui
  * @date 2022/7/19 15:50
  */
@@ -13,7 +13,7 @@ public class Lc62 {
 
     /**
      * 方法一 动态规划
-     * 时间复杂度：O(mn)O(mn)。
+     * 时间复杂度：O(mn)。
      * 1 <= m, n <= 100
      *
      * 步骤一: 定义数组元素的含义   dp[m][n]的含义为：当机器人从左上角走到(m, n) 这个位置时，一共有 dp[m][n] 种路径
@@ -27,7 +27,7 @@ public class Lc62 {
      * @return
      */
     public static int uniquePaths(int m, int n) {
-        //m相当于Y轴
+        //m相当于Y轴，第m行第n列
         int[][] f = new int[m][n];
 
         for (int i = 0; i < m; ++i) {
