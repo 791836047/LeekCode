@@ -1,7 +1,7 @@
 package com.whl.leekcode.mid;
 
 /**
- * 最小路径和
+ * 最小路径和 HOT64
  * @author liaowenhui
  * @date 2022/7/21 9:05
  */

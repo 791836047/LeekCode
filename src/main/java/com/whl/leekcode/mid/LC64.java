@@ -41,7 +41,7 @@ public class LC64 {
         }
         int rows = grid.length, columns = grid[0].length;
 
-        //rows相当于Y轴 columns相当于X轴
+        //rows相当于Y轴，第几行  columns相当于X轴，第几列
         int[][] dp = new int[rows][columns];
         //!!
         dp[0][0] = grid[0][0];
