@@ -18,7 +18,7 @@ public class LC10 {
         int l = 0, r = height.length - 1;
         int ans = 0;
         while (l < r) {
-            //注意长是r-1
+            //注意长是r-l
             int area = Math.min(height[l], height[r]) * (r - l);
             ans = Math.max(ans, area);
             if (height[l] <= height[r]) {

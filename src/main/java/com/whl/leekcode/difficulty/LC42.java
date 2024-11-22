@@ -136,9 +136,9 @@ class LC42 {
 
 
     public static void main(String[] args) {
-        int[] multiplePeakArray = {0,3,0,1,0,2};
+        int[] multiplePeakArray = {0,2,0,1,0,3};
         //int[] multiplePeakArray = {0,1,0,0,2};
-        System.out.println("结果为："+ LC42.trap1Test(multiplePeakArray));
+        System.out.println("结果为："+ LC42.trap2(multiplePeakArray));
     }
 
 }

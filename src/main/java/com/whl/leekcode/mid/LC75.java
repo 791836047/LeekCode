@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class LC75 {
 
     /**
-     * 方法一：单指针
+     * 方法一：单指针  推荐
      * 时间复杂度：O(n)，其中 n 是数组 nums的长度。
      * 空间复杂度：O(1)。
      * @param nums

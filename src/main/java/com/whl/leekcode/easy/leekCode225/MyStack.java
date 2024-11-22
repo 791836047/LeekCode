@@ -32,7 +32,9 @@ public class MyStack {
      * Initialize your data structure here.
      */
     public MyStack() {
+        //queue1存先进的
         queue1 = new LinkedList<>();
+        //存后进的
         queue2 = new LinkedList<>();
     }
 

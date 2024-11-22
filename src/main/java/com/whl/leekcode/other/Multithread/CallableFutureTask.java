@@ -12,6 +12,8 @@ public class CallableFutureTask {
         //第一种方式 线程池
         ExecutorService executor = Executors.newCachedThreadPool();
         Task1 task1 = new Task1();
+        //适合需要额外控制任务状态或希望在多个地方访问任务结果的场景。
+        //使用 FutureTask：适合需要更多控制和管理任务状态的场景。例如，可以在任务处理中途进行取消、检查任务是否完成等操作
         FutureTask<Integer> futureTask = new FutureTask<>(task1);
         executor.submit(futureTask);
         executor.shutdown();
